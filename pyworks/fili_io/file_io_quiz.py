@@ -16,12 +16,10 @@
 
 # 실습 2
 
-
 try:
     member_id = []
     member_pw = []
     for i in range(3):
-
         name = input("이름 입력: ")
         pw = input("pw 입력: ")
         member_id.append(name)
@@ -29,12 +27,32 @@ try:
 
     with open("./output/member.txt", "w") as f:
         for i in range(3):
-            f.write(f"{member_id[i][0]} {member_pw[i][0]}\n")
+            f.write(f"{member_id[i]} {member_pw[i]}\n")
 except:
     print("파일 경로 못찾음")
+
 try:
     with open("./output/member.txt", "r") as f1:
-        data= f1.read()
+        data = f1.read()
         print(data)
 except:
     print("경로 못찾음")
+
+# 로그인
+name = input("이름 입력: ")
+pw = input("pw 입력: ")
+user = f"{name} {pw}"
+
+with open("./output/member.txt", "r") as f1:
+    member_list = f1.readlines()
+
+sw = False
+for member in member_list:
+    if member.strip() == user:
+        sw = True
+        break
+
+if sw == True:
+    print("로그인 성공")
+else:
+    print("로그인 실패")
