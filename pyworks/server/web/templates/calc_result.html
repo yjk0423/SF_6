@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>서버에서 데이터 받기</title>
+    <title>결과</title>
 </head>
 <body>
 <header>
@@ -14,14 +14,8 @@
     </nav>
 </header>
 <section>
-    <h2>서버에서 데이터 받기</h2>
-    <h3> 현재 계절: {{season}}</h3>
-    <!--목록 태그-->
-    <ul>
-        {%for season in seasons%}
-        <li>{{season}}</li>
-        {%endfor%}
-    </ul>
+    <h2>짝수 홀수 판정 결과</h2>
+    <p>{{result}}</p>
 
 </section>
 </body>

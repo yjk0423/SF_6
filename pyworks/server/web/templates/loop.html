@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>서버에서 데이터 받기</title>
@@ -14,12 +14,21 @@
     </nav>
 </header>
 <section>
-    <h2>서버에서 데이터 받기</h2>
-    <h3> 현재 계절: {{season}}</h3>
+    <h2>반복 조건문</h2>
     <!--목록 태그-->
     <ul>
-        {%for season in seasons%}
-        <li>{{season}}</li>
+        {%for i in range(1,11)%}
+        <li>{{' *' * i}}</li>
+        {%endfor%}
+        <br>
+        {%for alpha in item%}
+        <li>{{loop.index}}: {{alpha}}</li>
+        {%endfor%}
+        <br>
+        {%for alpha in item%}
+            {%if loop.index < 3%}
+                <li>{{loop.index}}: {{alpha}}</li>
+            {%endif%}
         {%endfor%}
     </ul>
 
