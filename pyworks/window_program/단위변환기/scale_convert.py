@@ -10,7 +10,7 @@ class ScaleConverter:
 
     # 단위 변환 메서드
     def convert(self, value):
-        return self.factor * value
+        return value / self.factor
 
     #객체의 정보를 출력하는 메서드
     def __str__(self):
@@ -18,10 +18,7 @@ class ScaleConverter:
 
 #  con 객체 생성
 if __name__ == '__main__':
-    con = ScaleConverter('MB', 'KB', 1024)
+    con = ScaleConverter('KB', 'MB', 1024)
     print(con)
-    print("*** KB를 MB로 변환 ***")
-    con2 = ScaleConverter('inch', 'mm', 25.4)
-    print(f'2{con2.units_from} = {con2.convert(2)}{con2.units_to}')
-
-
+    print("*** KB를 MB로 변환 ****")
+    print(f'{con.convert(1630): .2f}{con.units_to}')
