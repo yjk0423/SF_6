@@ -5,13 +5,16 @@ import random
 def click():
     name_list = ['김용준','김용혁','임현수','윤종관','정지은','오민선','윤다빈','박민우','최준영','고지수','조형주']
     member = []
-    while len(member) < 3:
-        ran1 = random.choice(name_list)
-        if ran1 not in member:
-            member.append(ran1)
 
+    win = set()
+
+    while len(win) < 3:
+        ran1 = random.choice(name_list)
+        # if ran1 not in member:
+        #     member.append(ran1)
+        win.add(ran1)
     text.delete(0.0, END)
-    text.insert(END,member)
+    text.insert(END,win)
 
 window = Tk()
 window.title("쿠폰 추첨기")
